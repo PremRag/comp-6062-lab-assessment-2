@@ -11,12 +11,21 @@
     <body id="app" class="container">
         <!--- Vue app container is attached the body tag--->
 
-        <!--- Vue.js CDN --->
         <!--- Opening HTML5 semantic tags--->
-        <header><h1>Pressure Monitor Interface - Prem Rag</h1></header>
-        <main></main>
-        <footer></footer>
+        <header><h1>Pressure Monitor Interface - {{myFullName}}</h1></header>
+        <main>
+            <p>Current Pressure: <strong>{{pressureMonitorValue}}</strong></p>
+            <input v-model="pressureMonitorValue" type="range" min="0" max="100">
+            <div v-for="pressureLevel in pressureMonitorLevels":key="pressureLevel.id" :class="['indicator', pressureLevel.color, { 'inactive': !isActive(pressureLevel) }]">
+                {{ pressureLevel.label}}
+            </div>
+        </main>
+        <footer>{{myFullName}}</footer>
         <!--- Closting HTML5 semantic tags--->
+
+        <!--- Vue.js CDN --->
+        <script src="https://unpkg.com/vue@3.4.31/dist/vue.global.js"></script>
+
         <!--- Custom JavaScript file --->
         <script src="scripts/app.js"></script>
     </body>

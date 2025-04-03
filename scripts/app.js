@@ -4,7 +4,7 @@ const app = Vue.createApp({
     data() {
         return {
             myFullName: 'Gudishala Prem Rag',
-            pressureMonitorValues: 65,
+            pressureMonitorValue: 65,
             pressureMonitorLevels: [
                 { id: 'danger-low', color: 'danger', label: 'Danger - Low!', min: 0, max: 10 },
                 { id: 'warn-low', color: 'warning', label: 'Warning - Low', min: 11, max: 30 },
@@ -21,6 +21,10 @@ const app = Vue.createApp({
     methods: {
         isActive(pressureLevel) {
             /// Logic here for if the pressure is within the level parameters return boolean
+            if(pressureMonitorValue >= 0 && pressureMonitorValue <= 100)
+            {
+                return false;
+            }
         }
     }
 });
