@@ -1,22 +1,22 @@
-indicator {
+.indicator {
     padding: 40px;
     margin: 5px 0;
     text-align: center;
 }
 
-danger {
+.danger {
     background-color: red;
 }
 
-warning {
+.warning {
     background-color: yellow;
 }
 
-safe {
+.safe {
     background-color: green;
 }
 
-inactive {
+.inactive {
     display: none;
 }
 footer {
